@@ -116,7 +116,21 @@
 %% \vspace element to keep the marginal header pleasingly aligned with the first 
 %% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
-\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+%%\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+%%% MARGIN HEAD as section header:
+%%%	1. now you do not have to manually ajust vertical positions of the section headers
+%%%	2. only need to check the end of each page where header might be separated from its body
+\newcommand{\marginhead}[1]{%
+	\medskip%
+	\mbox{\relax}% KEY command to make it possible to automatically keep inline with body text
+	\marginpar{%
+		\raggedleft% now RIGHT justified to body text, comment out if prefer to be left justified
+		\footnotesize\sffamily%
+		\color{Maroon}%
+		#1%
+	}%
+	\vskip-1ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
+}%
 
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
@@ -168,12 +182,12 @@
 \noindent{\LARGE\scheader \textsc{kieran healy}}
 \reversemarginpar
 
-\bigskip       
+%\bigskip       
 
 
 %% Appointments
 % \medskip
-\marginhead{\sffamily appointments}
+\marginhead{appointments}%\sffamily 
 
 \ind Associate Professor in Sociology and the Kenan Institute for Ethics, Duke University, 2009--Present.      
 
@@ -186,11 +200,11 @@ Research School of Social Sciences, Australian National University, 2003--2006.
 
 \ind Assistant Professor of Sociology, University of Arizona, 2001--2008.
 
-\bigskip
+%\bigskip
 
 %% Education
 
-\marginhead{\sffamily {{\vskip -0.23em} education}}
+\marginhead{education}%\sffamily{\vskip-0.23em}
 
 %\noindent\emph{Princeton University \vspace{0.01in}}
 
@@ -212,8 +226,9 @@ Research School of Social Sciences, Australian National University, 2003--2006.
 \bigskip
  
 %% Publications
-\marginhead{\sffamily {\vskip 0.35em} publications}
-\medskip
+\marginhead{publications}%\sffamily{\vskip 0.35em} 
+%\medskip
+
 \noindent\emph{Book \vspace{0.01in}}
 
 \ind  Kieran Healy. 2006. \emph{\href{http://www.lastbestgifts.com}{Last Best Gifts: Altruism and the Market for Human Blood and Organs}}. Chicago:~University of Chicago Press. \vspace{0.05in}
@@ -345,11 +360,11 @@ Zuckerman. \emph{Contemporary Sociology} 28:~210--211.
 
  
 % %\end{revnumerate}
- \bigskip
+%\bigskip
 
 %% Presentations
-\marginhead{\sffamily {\vskip 0.5em}selected \newline invited talks \newline since 2007}
-\medskip
+\marginhead{selected invited talks since 2007}%\sffamily {\vskip 0.5em}
+%\medskip
 
 
 \ind ``Classification Situations.'' Yale University Center for Cultural Sociology, 2013.
@@ -384,12 +399,12 @@ Zuckerman. \emph{Contemporary Sociology} 28:~210--211.
 
 %\end{revnumerate}
 
-\bigskip
+%\bigskip
 
 %\newpage
 
-\marginhead{\sffamily {\vskip 0.5em}selected \newline conference \newline presentations \newline since 2007}
-\medskip
+\marginhead{selected conference presentations since 2007}%\sffamily {\vskip 0.5em}
+%\medskip
 
 \ind ``Dealing with Awkward Relations.'' Conference on New Theoretical Directions in Economic Sociology, Stockholm, September 2013. 
 
@@ -425,10 +440,10 @@ Zuckerman. \emph{Contemporary Sociology} 28:~210--211.
 
 \ind Discussant, Book Panel on Steven Levitt and Stephen Dubner's \emph{Freakonomics}. Annual Meetings of the Eastern Sociological Society, Philadelphia, 2007. 
 
-\bigskip 
+%\bigskip 
 
-\marginhead{\sffamily {\vskip 0.6em}grants,\newline honors, \newline \& awards}
-\medskip
+\marginhead{grants, honors, \& awards}%\sffamily{\vskip 0.6em}
+%\medskip
 
 \ind Residential Fellowship, Center for Advanced Study in the Behavioral Sciences, Stanford University, 2008-09.
 
@@ -466,15 +481,15 @@ College, Cork, 1991--1993.
 \bigskip 
 
 
-\marginhead{\sffamily {\vskip 1.12em}service to the \newline profession}
-\medskip
+\marginhead{service to the profession}%\sffamily {\vskip 1.12em}
+%\medskip
 
-\medskip
+%\medskip
 
 
-\marginhead{{\vskip 0.9em}Service to the \newline Profession}
-\medskip
+\marginhead{Service to the Profession}%{\vskip 0.9em}
+%\medskip
 
-\medskip
+%\medskip
 
 \end{document}
